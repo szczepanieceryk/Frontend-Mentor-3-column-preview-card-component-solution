@@ -1,0 +1,129 @@
+/* custom CSS variables */
+:root{
+/* fonts */
+--headings-font: 'Big Shoulders Display', cursive;
+--txt-font: 'Lexend Deca', sans-serif;
+--font-size:15px;
+/* colors */
+/* ### Primary */
+--bright-orange: hsl(31, 77%, 52%);
+--dark-cyan:hsl(184, 100%, 22%);
+--very-dark-cyan: hsl(179, 100%, 13%);
+/* ### Neutral */
+/* (paragraphs) */
+--transparent-white: hsla(0, 0%, 100%, 0.75);
+/* background, headings, buttons */
+--very-light-gray: hsl(0, 0%, 95%);
+--attributions:hsl(228, 45%, 44%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: var(--font-size);
+}
+.app-wrapper{
+    padding: 3em 1em;
+    min-height: 100vh;
+}
+
+/* card */
+.card{
+    padding: 6em 3em 2em;
+    text-align: left;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    color: var(--transparent-white);
+    background-color: var(--bright-orange);
+}
+.card-title{
+    text-transform: uppercase;
+    font-family: var(--headings-font);
+}
+.card-title::before{
+    content: url(./images/icon-sedans.svg);
+    position: absolute;
+    top: 1em;
+}
+.card-txt{
+    margin: 1em 0;
+    line-height: 2em;
+    font-family: var(--txt-font);
+}
+.card .more{
+    margin: 1em 0;
+    padding:.8em 1em;
+    width: 60%;
+    border-style: none;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: .3s;
+    color: var(--bright-orange);
+    background-color: var(--very-light-gray);
+}
+.card .more:hover{
+    border: 2px solid var(--transparent-white);
+    color: var(--very-light-gray);
+    background-color: var(--bright-orange);
+}
+
+/* styles for different cards */
+.card#two{
+    border-radius: 0;
+    background-color: var(--dark-cyan);
+}
+.card#two .card-title::before{
+    content: url(./images/icon-suvs.svg);
+}
+.card#two .more{
+    color: var(--dark-cyan);
+}
+.card#two .more:hover{
+    color: var(--very-light-gray);
+    background-color: var(--dark-cyan);
+}
+.card#three{
+    border-radius: 0 0 8px 8px;
+    background-color: var(--very-dark-cyan);
+}
+.card#three .card-title::before{
+    content: url(./images/icon-luxury.svg);
+}
+.card#three .more{
+    color: var(--very-dark-cyan);
+}
+.card#three .more:hover{
+    color: var(--very-light-gray);
+    background-color: var(--very-dark-cyan);
+}
+
+/* attributions */
+.attribution {
+    margin: 1em auto;
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: var(--attributions);
+}
+
+@media screen and (min-width:992px){
+    .container{
+        margin: 7em auto 4em;
+    }
+
+    /* card */
+    .card{
+        padding: 7em 3em 2em;
+        border-radius: 8px 0px 0 8px;        
+    }
+    .card#three {
+        border-radius: 0 8px 8px 0;        
+    }
+    .card-txt{
+        margin: 1em 0 4em;
+    }
+}
